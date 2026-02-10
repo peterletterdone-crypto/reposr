@@ -1,0 +1,106 @@
+.input-box {
+    border: 1px solid #ccc; /* Set border color */
+    padding: 5px; /* Add some padding for better user experience */
+    border-radius: 4px; /* Optional: add some border-radius for rounded corners */
+}
+.selection-dropdown{
+  height: -webkit-fill-available;
+  background:var(--theme-light-red);
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+/* Add this CSS rule to hide the up/down arrows in number input fields */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.action-area {
+  // background-color: var(--theme-lighter-red);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 10px;
+  .search-div {
+    width: 330px;
+      position: relative;
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        svg{
+            width: 20px;
+            height: 20px;
+            vertical-align: sub;
+        }
+      }
+      input {
+        border-radius: .375rem;
+        padding: 10px 30px;
+        height: 40px;
+        &::placeholder {
+          color: var(--light-gray);
+        }
+        &:focus {
+          box-shadow: none;
+          border: 1px solid var(--theme-red);
+        }
+      }
+  }
+  .actions-buttons {
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+    span{
+      cursor: pointer;
+      &.tooltip-relative {
+        position: relative;
+        .tooltip{
+          position: absolute;
+          z-index: 9;
+          bottom: -40px;
+          right: 0;
+          background-color: var(--theme-black);
+          color: var(--white-color);
+          border-radius: 5px;
+          padding: 5px 15px;
+          opacity: 0;
+          &::before{
+            content: '';
+            position: absolute;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            top: -7px;
+            right: 2px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--theme-black);
+          }
+        }
+        &:hover .tooltip{
+          opacity: 1;
+        }
+      }
+    }
+    .filter-box{
+      min-width: 600px;
+    }
+  }
+}
+.right-area .exam-cancel-button{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+  
